@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import { render } from "react-dom";
-import Widget from "./WidgetComponent";
-import Connect from "./ConnectComponent";
+import SideWidget from "../SideWidget";
+import Link from "../Link";
 import rp from "request-promise";
-import GalleryItem from "./GalleryItem";
+import GalleryItem from "../GalleryItem";
 import Push from "push.js";
 
 class Gallery extends Component {
@@ -209,7 +209,7 @@ class Gallery extends Component {
             )}
           </div>
 
-          <Widget
+          <SideWidget
             {...this.props}
             previous={this.state[context].previous}
             next={this.state[context].next}
@@ -223,7 +223,7 @@ class Gallery extends Component {
         </div>
       </div>
     ) : (
-      <Connect />
+      <Link />
     );
   }
 }

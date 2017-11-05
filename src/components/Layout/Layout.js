@@ -1,8 +1,8 @@
 import React, { Component } from "react";
-import Header from "./HeaderComponent";
-import Body from "./BodyComponent";
-import Contact from "./ContactComponent";
-import Footer from "./FooterComponent";
+import Header from "../Header";
+import Body from "../Body";
+import Contact from "../Contact";
+import Footer from "../Footer";
 import { render } from "react-dom";
 
 class Layout extends Component {

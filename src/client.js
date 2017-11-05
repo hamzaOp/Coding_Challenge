@@ -2,7 +2,7 @@ import React from "react";
 import { render } from "react-dom";
 import Nighthawk from "nighthawk";
 import setupRouter from "./utilities/setup_route";
-import App from "./components/AppComponent";
+import Layout from "./components/Layout";
 import rp from "request-promise";
 
 const router = Nighthawk();
@@ -27,7 +27,10 @@ router.use(function(req, res, next) {
 });
 
 router.use(function(req, res, next) {
-  render(<App {...res.locals.currentUser} />, document.getElementById("root"));
+  render(
+    <Layout {...res.locals.currentUser} />,
+    document.getElementById("root")
+  );
   next();
 });
 

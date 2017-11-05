@@ -1,13 +1,13 @@
 import express from "express";
 import React from "react";
 import { renderToString } from "react-dom/server";
-import App from "../components/AppComponent";
+import Layout from "../components/Layout";
 import setupRouter from "../utilities/setup_route";
 import passport from "passport";
 import User from "../data/models/user";
 import buildUser from "../utilities/buildUser";
 
-const AppFactory = React.createFactory(App);
+const AppFactory = React.createFactory(Layout);
 var router = express.Router();
 setupRouter(router);
 

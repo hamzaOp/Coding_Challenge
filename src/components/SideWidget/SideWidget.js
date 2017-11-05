@@ -3,7 +3,7 @@ import { render } from "react-dom";
 import UserAvatar from "react-user-avatar";
 import rp from "request-promise";
 import Push from "push.js";
-import Pager from "./PagerComponent";
+import Pager from "../Pager";
 
 class SideWidget extends Component {
   noop() {}

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import Gallery from "./GalleryComponent";
-import FormList from "./FormListComponent";
+import Gallery from "../Gallery";
+import FormList from "../FormList";
 
 import { render } from "react-dom";
 
