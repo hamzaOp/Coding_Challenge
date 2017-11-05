@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { render } from "react-dom";
 
-class Connect extends Component {
+class Link extends Component {
   render() {
     let style = {
       marginTop: "20px",
@@ -17,7 +17,7 @@ class Connect extends Component {
               onClick={e => e.stopPropagation()}
               href="/auth/facebook"
             >
-              Connect your account to Facebook
+              Link your account to Facebook
             </a>
           </h4>
         </p>
@@ -26,4 +26,4 @@ class Connect extends Component {
   }
 }
 
-export default Connect;
+export default Link;
