@@ -15,5 +15,8 @@
   },
   "globals": {
     "DEBUG": false
+  },
+  "rules": {
+    "import/no-extraneous-dependencies": ["error", { "packageDir": "./" }]
   }
 }
