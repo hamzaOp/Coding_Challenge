@@ -1,8 +1,8 @@
-import React, { Component } from "react";
-import Gallery from "../Gallery";
-import FormList from "../FormList";
+import React, { Component } from 'react';
+import Gallery from '../Gallery';
+import FormList from '../FormList';
 
-import { render } from "react-dom";
+import { render } from 'react-dom';
 
 class Body extends Component {
   render() {

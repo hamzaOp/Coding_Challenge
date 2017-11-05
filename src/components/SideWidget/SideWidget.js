@@ -1,16 +1,16 @@
-import React, { Component } from "react";
-import { render } from "react-dom";
-import UserAvatar from "react-user-avatar";
-import rp from "request-promise";
-import Push from "push.js";
-import Pager from "../Pager";
+import React, { Component } from 'react';
+import { render } from 'react-dom';
+import UserAvatar from 'react-user-avatar';
+import rp from 'request-promise';
+import Push from 'push.js';
+import Pager from '../Pager';
 
 class SideWidget extends Component {
   noop() {}
 
   componentDidMount() {
-    Push.create("Welcome !", {
-      body: "You can now view all your albums & photos :)",
+    Push.create('Welcome !', {
+      body: 'You can now view all your albums & photos :)',
       timeout: 4000,
       onClick: function() {
         window.focus();
@@ -21,7 +21,7 @@ class SideWidget extends Component {
 
   render() {
     let style = {
-      cursor: "pointer"
+      cursor: 'pointer'
     };
 
     return (
@@ -32,10 +32,10 @@ class SideWidget extends Component {
               size="35"
               name={this.props.facebook.name}
               src={
-                "https://graph.facebook.com" +
-                "/v2.10/" +
+                'https://graph.facebook.com' +
+                '/v2.10/' +
                 this.props.facebook.id +
-                "/picture?access_token=" +
+                '/picture?access_token=' +
                 this.props.facebook.token
               }
             />
@@ -44,27 +44,16 @@ class SideWidget extends Component {
             <Pager {...this.props} />
           </div>
           <div className="card-footer text-muted">
-            {this.props.context == "photos" ? (
-              <button
-                style={style}
-                type="button"
-                onClick={this.props.changeToAlbums}
-                className="btn btn-primary"
-              >
+            {this.props.context == 'photos' ? (
+              <button style={style} type="button" onClick={this.props.changeToAlbums} className="btn btn-primary">
                 Go back
               </button>
             ) : (
               <button
                 style={style}
                 type="button"
-                className={
-                  this.props.no_albums
-                    ? "btn btn-primary disabled"
-                    : "btn btn-primary"
-                }
-                onClick={
-                  !this.props.no_albums ? this.props.changeToPhotos : this.noop
-                }
+                className={this.props.no_albums ? 'btn btn-primary disabled' : 'btn btn-primary'}
+                onClick={!this.props.no_albums ? this.props.changeToPhotos : this.noop}
               >
                 View photos
               </button>

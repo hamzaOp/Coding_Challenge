@@ -1,7 +1,7 @@
-import React, { Component } from "react";
-import Form from "../Form";
-import { render } from "react-dom";
-var request = require("request");
+import React, { Component } from 'react';
+import Form from '../Form';
+import { render } from 'react-dom';
+var request = require('request');
 
 class FormList extends Component {
   render() {

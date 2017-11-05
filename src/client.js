@@ -1,9 +1,9 @@
-import React from "react";
-import { render } from "react-dom";
-import Nighthawk from "nighthawk";
-import setupRouter from "./utilities/setup_route";
-import Layout from "./components/Layout";
-import rp from "request-promise";
+import React from 'react';
+import { render } from 'react-dom';
+import Nighthawk from 'nighthawk';
+import setupRouter from './utilities/setup_route';
+import Layout from './components/Layout';
+import rp from 'request-promise';
 
 const router = Nighthawk();
 
@@ -12,10 +12,10 @@ setupRouter(router);
 router.use(function(req, res, next) {
   fetch(req.url, {
     headers: {
-      Accept: "application/json",
-      "X-Requested-With": "XMLHttpRequest"
+      Accept: 'application/json',
+      'X-Requested-With': 'XMLHttpRequest'
     },
-    credentials: "include"
+    credentials: 'include'
   })
     .then(function(data) {
       return data.json();
@@ -27,10 +27,7 @@ router.use(function(req, res, next) {
 });
 
 router.use(function(req, res, next) {
-  render(
-    <Layout {...res.locals.currentUser} />,
-    document.getElementById("root")
-  );
+  render(<Layout {...res.locals.currentUser} />, document.getElementById('root'));
   next();
 });
 

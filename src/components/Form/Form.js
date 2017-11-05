@@ -1,23 +1,17 @@
-import React, { Component } from "react";
-import { render } from "react-dom";
+import React, { Component } from 'react';
+import { render } from 'react-dom';
 
 class Form extends Component {
   render() {
     let style = {
-      cursor: "pointer"
+      cursor: 'pointer'
     };
 
     return (
       <form action={this.props.children} method="post">
         <div className="form-group">
           <label htmlFor="email">Email address</label>
-          <input
-            name="email"
-            type="email"
-            className="form-control"
-            placeholder="Email"
-            required
-          />
+          <input name="email" type="email" className="form-control" placeholder="Email" required />
         </div>
         <div className="form-group">
           <label htmlFor="password">Password</label>
