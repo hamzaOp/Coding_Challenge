@@ -6,6 +6,9 @@
   "license": "MIT",
   "private": true,
   "scripts": {
+    "format":
+      "prettier --write --single-quote --print-width=120 \"src/**/*.{js,jsx}\"",
+    "lint": "eslint **/*.{js,jsx} --quiet",
     "server": "babel-node --debug ./src/server.js",
     "build": "webpack -p",
     "start": "npm run build && npm run server"
