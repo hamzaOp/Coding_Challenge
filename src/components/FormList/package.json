@@ -1,0 +1,6 @@
+{
+  "name": "formlist",
+  "version": "0.0.0",
+  "private": true,
+  "main": "./FormList.js"
+}
