@@ -1,0 +1,6 @@
+{
+  "name": "connect",
+  "version": "0.0.0",
+  "private": true,
+  "main": "./Connect.js"
+}
