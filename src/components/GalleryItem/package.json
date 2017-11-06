@@ -2,5 +2,5 @@
   "name": "gallery-item",
   "version": "0.0.0",
   "private": true,
-  "main": "./GalleryItem.js"
+  "main": "./GalleryItem.jsx"
 }

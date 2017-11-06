@@ -2,5 +2,5 @@
   "name": "pager",
   "version": "0.0.0",
   "private": true,
-  "main": "./Pager.js"
+  "main": "./Pager.jsx"
 }

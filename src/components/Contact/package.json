@@ -2,5 +2,5 @@
   "name": "contact",
   "version": "0.0.0",
   "private": true,
-  "main": "./Contact.js"
+  "main": "./Contact.jsx"
 }

@@ -2,5 +2,5 @@
   "name": "body",
   "version": "0.0.0",
   "private": true,
-  "main": "./Body.js"
+  "main": "./Body.jsx"
 }
