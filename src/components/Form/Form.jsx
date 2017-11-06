@@ -1,8 +1,8 @@
-import React from "react";
+import React from 'react';
 
 const Form = props => {
   const style = {
-    cursor: "pointer"
+    cursor: 'pointer'
   };
 
   return (
@@ -10,13 +10,7 @@ const Form = props => {
       <div className="form-group">
         <label htmlFor="email">
           Email address
-          <input
-            name="email"
-            type="email"
-            className="form-control"
-            placeholder="Email"
-            required
-          />
+          <input name="email" type="email" className="form-control" placeholder="Email" required />
         </label>
       </div>
       <div className="form-group">

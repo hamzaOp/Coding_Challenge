@@ -1,16 +1,16 @@
-import React, { Component } from "react";
-import Push from "push.js";
-import rp from "request-promise";
-import SideWidget from "../SideWidget";
-import Link from "../Link";
-import GalleryItem from "../GalleryItem";
+import React, { Component } from 'react';
+import Push from 'push.js';
+import rp from 'request-promise';
+import SideWidget from '../SideWidget';
+import Link from '../Link';
+import GalleryItem from '../GalleryItem';
 
 class Gallery extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      context: "albums",
+      context: 'albums',
       no_albums: false,
       albums: {
         dataSet: [],
@@ -37,7 +37,7 @@ class Gallery extends Component {
         limit: 1
       },
       headers: {
-        "User-Agent": "Request-Promise"
+        'User-Agent': 'Request-Promise'
       },
       json: true
     };
@@ -73,10 +73,9 @@ class Gallery extends Component {
 
     const uri = {
       uri: `https://graph.facebook.com/v2.10/${this.state.albums.dataSet[0]
-        .id}?fields=photos{name,source,created_time}&access_token=${this.props
-        .facebook.token}`,
+        .id}?fields=photos{name,source,created_time}&access_token=${this.props.facebook.token}`,
       headers: {
-        "User-Agent": "Request-Promise"
+        'User-Agent': 'Request-Promise'
       },
       json: true
     };
@@ -84,7 +83,7 @@ class Gallery extends Component {
     rp(uri).then(resp => {
       if (resp.photos) {
         this.setState({
-          context: "photos",
+          context: 'photos',
           photos: {
             dataSet: resp.photos.data,
             source: uri,
@@ -94,8 +93,8 @@ class Gallery extends Component {
           }
         });
       } else {
-        Push.create("This album has no photos...", {
-          body: ":(",
+        Push.create('This album has no photos...', {
+          body: ':(',
           timeout: 3000,
           onClick: () => {
             window.focus();
@@ -109,7 +108,7 @@ class Gallery extends Component {
   changeToAlbumsContext(e) {
     e.stopPropagation();
     this.setState({
-      context: "albums"
+      context: 'albums'
     });
   }
 
@@ -120,7 +119,7 @@ class Gallery extends Component {
     rp({
       uri: this.state[context].previous,
       headers: {
-        "User-Agent": "Request-Promise"
+        'User-Agent': 'Request-Promise'
       },
       json: true
     }).then(resp => {
@@ -128,9 +127,7 @@ class Gallery extends Component {
         [context]: {
           dataSet: resp.data ? resp.data : resp.photos.data,
           source: this.state[context].previous,
-          previous: resp.paging
-            ? resp.paging.previous
-            : resp.photos.paging.previous,
+          previous: resp.paging ? resp.paging.previous : resp.photos.paging.previous,
           next: resp.paging ? resp.paging.next : resp.photos.paging.next,
           loading: false
         }
@@ -145,7 +142,7 @@ class Gallery extends Component {
     rp({
       uri: this.state[context].next,
       headers: {
-        "User-Agent": "Request-Promise"
+        'User-Agent': 'Request-Promise'
       },
       json: true
     }).then(resp => {
@@ -153,9 +150,7 @@ class Gallery extends Component {
         [context]: {
           dataSet: resp.data ? resp.data : resp.photos.data,
           source: this.state[context].next,
-          previous: resp.paging
-            ? resp.paging.previous
-            : resp.photos.paging.previous,
+          previous: resp.paging ? resp.paging.previous : resp.photos.paging.previous,
           next: resp.paging ? resp.paging.next : resp.photos.paging.next,
           loading: false
         }
@@ -176,17 +171,13 @@ class Gallery extends Component {
   render() {
     const { context } = this.state;
     const { token } = this.props.facebook;
-    const galleryItems = this.state[context].dataSet.map(el => (
-      <GalleryItem {...el} token={token} context={context} />
-    ));
+    const galleryItems = this.state[context].dataSet.map(el => <GalleryItem {...el} token={token} context={context} />);
 
     return this.props.facebook.id ? (
       <div className="container">
         <div className="row">
           <div className="col-md-8">
-            <h1 className="my-4">
-              {this.state.context === "albums" ? "Albums" : "Photos"}
-            </h1>
+            <h1 className="my-4">{this.state.context === 'albums' ? 'Albums' : 'Photos'}</h1>
             {this.showItems(context, galleryItems)}
           </div>
 

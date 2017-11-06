@@ -1,5 +1,5 @@
-import mongoose from "mongoose";
-import bcrypt from "bcrypt-nodejs";
+import mongoose from 'mongoose';
+import bcrypt from 'bcrypt-nodejs';
 
 const SALT_FACTOR = 10;
 
@@ -23,4 +23,4 @@ userSchema.methods.validPassword = password => {
   bcrypt.compareSync(password, this.local.password);
 };
 
-module.exports = mongoose.model("User", userSchema);
+module.exports = mongoose.model('User', userSchema);
