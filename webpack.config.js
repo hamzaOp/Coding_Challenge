@@ -1,5 +1,6 @@
 module.exports = {
   entry: ["./src/client.jsx"],
+  devtool: "cheap-eval-source-map",
   output: {
     path: `${__dirname}/public/js`,
     filename: "bundle.js"
