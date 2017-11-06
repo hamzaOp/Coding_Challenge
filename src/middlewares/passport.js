@@ -1,7 +1,7 @@
-var LocalStrategy = require('passport-local').Strategy;
-var FacebookStrategy = require('passport-facebook').Strategy;
-var User = require('../data/models/user');
-var passport = require('passport');
+const LocalStrategy = require("passport-local").Strategy;
+const FacebookStrategy = require("passport-facebook").Strategy;
+const User = require("../data/models/user");
+const passport = require("passport");
 
 module.exports = function() {
   passport.serializeUser(function(user, done) {
@@ -15,19 +15,19 @@ module.exports = function() {
   });
 
   passport.use(
-    'local_signup',
+    "local_signup",
     new LocalStrategy(
       {
-        usernameField: 'email',
-        passwordField: 'password',
+        usernameField: "email",
+        passwordField: "password",
         passReqToCallback: true
       },
       function(req, email, password, done) {
-        User.findOne({ 'local.email': email }, function(err, user) {
+        User.findOne({ "local.email": email }, function(err, user) {
           if (err) return done(err);
 
           if (user) {
-            return done(null, false, req.flash('error', 'User already exists'));
+            return done(null, false, req.flash("error", "User already exists"));
           } else {
             var newUser = new User();
             newUser.local.email = email;
@@ -44,20 +44,26 @@ module.exports = function() {
   );
 
   passport.use(
-    'local_login',
+    "local_login",
     new LocalStrategy(
       {
-        usernameField: 'email',
-        passwordField: 'password',
+        usernameField: "email",
+        passwordField: "password",
         passReqToCallback: true
       },
       function(req, email, password, done) {
-        User.findOne({ 'local.email': email }, function(err, user) {
+        User.findOne({ "local.email": email }, function(err, user) {
           if (err) return done(err);
 
-          if (!user) return done(null, false, req.flash('error', 'No user found.'));
+          if (!user)
+            return done(null, false, req.flash("error", "No user found."));
 
-          if (!user.validPassword(password)) return done(null, false, req.flash('error', 'Oops! Wrong password.'));
+          if (!user.validPassword(password))
+            return done(
+              null,
+              false,
+              req.flash("error", "Oops! Wrong password.")
+            );
 
           return done(null, user);
         });
@@ -70,8 +76,8 @@ module.exports = function() {
       {
         clientID: process.env.CLIENT_ID,
         clientSecret: process.env.CLIENT_SECRET,
-        callbackURL: 'http://localhost:3000/auth/facebook/callback',
-        profileFields: ['id', 'name', 'email'],
+        callbackURL: "http://localhost:3000/auth/facebook/callback",
+        profileFields: ["id", "name", "email"],
         passReqToCallback: true,
         enableProof: true
       },
@@ -80,7 +86,8 @@ module.exports = function() {
         var user = req.user;
         user.facebook.id = profile.id;
         user.facebook.token = token;
-        user.facebook.name = profile.name.familyName + ' ' + profile.name.givenName;
+        user.facebook.name =
+          profile.name.familyName + " " + profile.name.givenName;
         user.save(function(err) {
           if (err) {
             throw err;

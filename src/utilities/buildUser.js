@@ -1,5 +1,5 @@
 export default function buildUser(user) {
-  var res = {};
+  const res = {};
   res.facebook = {};
   res.email = user.local.email;
   if (user.facebook) {

@@ -1,9 +1,9 @@
-import mongoose from 'mongoose';
-import bcrypt from 'bcrypt-nodejs';
+import mongoose from "mongoose";
+import bcrypt from "bcrypt-nodejs";
 
-var SALT_FACTOR = 10;
+const SALT_FACTOR = 10;
 
-var userSchema = mongoose.Schema({
+const userSchema = mongoose.Schema({
   local: {
     email: String,
     password: String
@@ -15,12 +15,12 @@ var userSchema = mongoose.Schema({
   }
 });
 
-userSchema.methods.generateHash = function(password) {
-  return bcrypt.hashSync(password, bcrypt.genSaltSync(SALT_FACTOR), null);
+userSchema.methods.generateHash = password => {
+  bcrypt.hashSync(password, bcrypt.genSaltSync(SALT_FACTOR), null);
 };
 
-userSchema.methods.validPassword = function(password) {
-  return bcrypt.compareSync(password, this.local.password);
+userSchema.methods.validPassword = password => {
+  bcrypt.compareSync(password, this.local.password);
 };
 
-module.exports = mongoose.model('User', userSchema);
+module.exports = mongoose.model("User", userSchema);
