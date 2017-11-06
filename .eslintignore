@@ -1,5 +1,6 @@
 node_modules/
 public/
+src/data
 src/middlewares
 src/router
 src/server.js
