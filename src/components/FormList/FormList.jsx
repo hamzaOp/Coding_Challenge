@@ -1,5 +1,6 @@
-import React from 'react';
-import Form from '../Form';
+// @flow
+import React from "react";
+import Form from "../Form";
 
 const FormList = () => (
   <div>
@@ -8,7 +9,7 @@ const FormList = () => (
         <div className="row">
           <div className="col-lg-8 mx-auto">
             <h2>Login</h2>
-            <Form>/login</Form>
+            <Form action="/login" />
           </div>
         </div>
       </div>
@@ -19,7 +20,7 @@ const FormList = () => (
         <div className="row">
           <div className="col-lg-8 mx-auto">
             <h2>Sign up</h2>
-            <Form>/signup</Form>
+            <Form action="/signup" />
           </div>
         </div>
       </div>
