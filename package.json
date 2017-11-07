@@ -11,7 +11,9 @@
     "lint": "eslint **/*.{js,jsx} --quiet",
     "server": "babel-node ./src/server.js",
     "build": "webpack -d",
-    "start": "npm run build && npm run server"
+    "build:production": "webpack -p",
+    "start": "npm run build && npm run server",
+    "start:production": "npm run build:production && npm run server"
   },
   "dependencies": {
     "bcrypt-nodejs": "^0.0.3",
