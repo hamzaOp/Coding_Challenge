@@ -1,8 +1,10 @@
-import mongoose from 'mongoose';
-import bcrypt from 'bcrypt-nodejs';
+// @flow
+import mongoose from "mongoose";
+import bcrypt from "bcrypt-nodejs";
 
 const SALT_FACTOR = 10;
 
+// $FlowFixMe
 const userSchema = mongoose.Schema({
   local: {
     email: String,
@@ -15,12 +17,12 @@ const userSchema = mongoose.Schema({
   }
 });
 
-userSchema.methods.generateHash = password => {
-  bcrypt.hashSync(password, bcrypt.genSaltSync(SALT_FACTOR), null);
+userSchema.methods.generateHash = function generateHash(password) {
+  return bcrypt.hashSync(password, bcrypt.genSaltSync(SALT_FACTOR), null);
 };
 
-userSchema.methods.validPassword = password => {
-  bcrypt.compareSync(password, this.local.password);
+userSchema.methods.validPassword = function validPassword(password) {
+  return bcrypt.compareSync(password, this.local.password);
 };
 
-module.exports = mongoose.model('User', userSchema);
+module.exports = mongoose.model("User", userSchema);

@@ -1,3 +1,4 @@
+// @flow
 import React from "react";
 import { render } from "react-dom";
 import Nighthawk from "nighthawk";
@@ -26,6 +27,7 @@ router.use((req, res, next) => {
 router.use((req, res, next) => {
   render(
     <Layout {...res.locals.currentUser} />,
+    // $FlowFixMe
     document.getElementById("root")
   );
   next();
