@@ -10,6 +10,7 @@ const path = require("path");
 const session = require("express-session");
 const favicon = require("serve-favicon");
 const routes = require("./router/routes");
+const compression = require("compression");
 const setUpPassport = require("./middlewares/passport");
 
 mongoose.Promise = global.Promise;
@@ -23,6 +24,7 @@ app.set("port", process.env.PORT || 3000);
 app.set("views", __dirname);
 app.set("view engine", "ejs");
 
+app.use(compression());
 app.use(express.static(path.join(__dirname, "..", "/public")));
 
 app.use(bodyParser.urlencoded({ extended: false }));
