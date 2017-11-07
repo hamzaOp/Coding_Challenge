@@ -23,7 +23,7 @@ const Header = (props: {
       >
         <div className="container">
           <Scrollchor to="#page-top" className="navbar-brand">
-            Hidden Founders {facebookName ? `${facebookName}` : ""}
+            Hidden Founders {facebookName ? `(${facebookName})` : ""}
           </Scrollchor>
           <button
             className="navbar-toggler"
