@@ -6,13 +6,15 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "format": "prettier --write --single-quote --print-width=120 \"src/**/*.{js,jsx}\"",
+    "format":
+      "prettier --write --single-quote --print-width=120 \"src/**/*.{js,jsx}\"",
     "lint": "eslint **/*.{js,jsx} --quiet",
     "server": "babel-node ./src/server.js",
     "build": "webpack -d",
     "build:production": "webpack -p",
     "start": "npm run build && npm run server",
-    "start:production": "npm run build:production && npm run server"
+    "start:production":
+      "NODE_ENV=production npm run build:production && npm run server"
   },
   "dependencies": {
     "bcrypt-nodejs": "^0.0.3",
