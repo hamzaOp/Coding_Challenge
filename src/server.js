@@ -9,7 +9,7 @@ const passport = require("passport");
 const path = require("path");
 const session = require("express-session");
 const favicon = require("serve-favicon");
-const routes = require("./router/router");
+const routes = require("./router/routes");
 const setUpPassport = require("./middlewares/passport");
 
 mongoose.Promise = global.Promise;
