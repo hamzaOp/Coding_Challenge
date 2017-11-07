@@ -1,6 +1,9 @@
-module.exports = {
+const config = {
   entry: ["./src/client.jsx"],
-  devtool: "cheap-eval-source-map",
+  devtool:
+    process.env.NODE_ENV === "production"
+      ? "source-map"
+      : "cheap-eval-source-map",
   output: {
     path: `${__dirname}/public/js`,
     filename: "bundle.js"
@@ -21,3 +24,5 @@ module.exports = {
     tls: "empty"
   }
 };
+
+module.exports = config;
