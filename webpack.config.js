@@ -1,3 +1,5 @@
+const WebpackShellPlugin = require("webpack-shell-plugin");
+
 const config = {
   entry: ["./src/client.jsx"],
   devtool:
@@ -8,6 +10,12 @@ const config = {
     path: `${__dirname}/public/js`,
     filename: "bundle.js"
   },
+  plugins: [
+    new WebpackShellPlugin({
+      onBuildStart: ["rm -rf build/*"],
+      onBuildEnd: ["cp ./public/js/bundle.js ./build"]
+    })
+  ],
   module: {
     loaders: [
       {

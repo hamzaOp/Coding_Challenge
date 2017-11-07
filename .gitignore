@@ -60,3 +60,6 @@ typings/
 # public directory
 public/
 
+# build directory
+build/
+
