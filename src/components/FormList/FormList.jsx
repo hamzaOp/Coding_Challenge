@@ -1,6 +1,6 @@
 // @flow
-import React from "react";
-import Form from "../Form";
+import React from 'react';
+import Form from '../Form';
 
 const FormList = () => (
   <div>

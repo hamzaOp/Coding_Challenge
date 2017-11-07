@@ -1,21 +1,17 @@
 // @flow
-import React from "react";
+import React from 'react';
 
 const Link = (props: { href: string }) => {
   const style = {
-    marginTop: "20px",
-    textAlign: "center"
+    marginTop: '20px',
+    textAlign: 'center'
   };
 
   return (
     <div className="container">
       <p style={style}>
         <h4>
-          <a
-            className="btn btn-outline-primary"
-            onClick={e => e.stopPropagation()}
-            href={props.href}
-          >
+          <a className="btn btn-outline-primary" onClick={e => e.stopPropagation()} href={props.href}>
             Link your account to Facebook
           </a>
         </h4>

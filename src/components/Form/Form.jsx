@@ -1,9 +1,9 @@
 // @flow
-import React from "react";
+import React from 'react';
 
 const Form = (props: { action: string }) => {
   const style = {
-    cursor: "pointer"
+    cursor: 'pointer'
   };
 
   return (
@@ -11,13 +11,7 @@ const Form = (props: { action: string }) => {
       <div className="form-group">
         <label htmlFor="email" />
         Email address
-        <input
-          name="email"
-          type="email"
-          className="form-control"
-          placeholder="Email"
-          required
-        />
+        <input name="email" type="email" className="form-control" placeholder="Email" required />
       </div>
       <div className="form-group">
         <label htmlFor="password" />

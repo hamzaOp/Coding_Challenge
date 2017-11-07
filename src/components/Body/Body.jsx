@@ -1,7 +1,7 @@
 // @flow
-import React from "react";
-import Gallery from "../Gallery";
-import FormList from "../FormList";
+import React from 'react';
+import Gallery from '../Gallery';
+import FormList from '../FormList';
 
 const Body = (props: {
   email: string,

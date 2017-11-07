@@ -1,9 +1,9 @@
 // @flow
-import React from "react";
-import Header from "../Header";
-import Body from "../Body";
-import Contact from "../Contact";
-import Footer from "../Footer";
+import React from 'react';
+import Header from '../Header';
+import Body from '../Body';
+import Contact from '../Contact';
+import Footer from '../Footer';
 
 const Layout = (props: {
   email: string,
