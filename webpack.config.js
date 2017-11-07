@@ -2,10 +2,7 @@ const WebpackShellPlugin = require("webpack-shell-plugin");
 
 const config = {
   entry: ["./src/client.jsx"],
-  devtool:
-    process.env.NODE_ENV === "production"
-      ? "source-map"
-      : "cheap-eval-source-map",
+  devtool: "cheap-eval-source-map",
   output: {
     path: `${__dirname}/public/js`,
     filename: "bundle.js"
@@ -32,5 +29,9 @@ const config = {
     tls: "empty"
   }
 };
+
+if (process.env.NODE_ENV === "production") {
+  config.devtool = false;
+}
 
 module.exports = config;
