@@ -12,9 +12,9 @@
     "server": "babel-node ./src/server.js",
     "build": "webpack -d",
     "build:production": "webpack -p",
-    "start": "npm run build && npm run server",
+    "start": "yarn build && yarn server",
     "start:production":
-      "NODE_ENV=production npm run build:production && npm run server"
+      "NODE_ENV=production yarn build:production && yarn server"
   },
   "dependencies": {
     "bcrypt-nodejs": "^0.0.3",
