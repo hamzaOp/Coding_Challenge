@@ -6,15 +6,13 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "format":
-      "prettier --write --single-quote --print-width=120 \"src/**/*.{js,jsx}\"",
+    "format": "prettier --write --single-quote --print-width=120 \"src/**/*.{js,jsx}\"",
     "lint": "eslint **/*.{js,jsx} --quiet",
     "server": "babel-node ./src/server.js",
     "build": "webpack -d",
     "build:production": "webpack -p",
     "start": "yarn build && yarn server",
-    "start:production":
-      "NODE_ENV=production yarn build:production && yarn server"
+    "start:production": "NODE_ENV=production yarn build:production && yarn server"
   },
   "dependencies": {
     "bcrypt-nodejs": "^0.0.3",
@@ -53,7 +51,7 @@
     "babel-preset-react": "^6.24.1",
     "eslint": "^4.10.0",
     "eslint-config-airbnb": "^16.1.0",
-    "eslint-config-prettier": "^2.7.0",
+    "eslint-config-prettier": "^2.9.0",
     "eslint-config-react": "^1.1.7",
     "eslint-plugin-flow": "^2.29.1",
     "eslint-plugin-flowtype": "^2.39.1",
