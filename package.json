@@ -6,15 +6,13 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "format":
-      "prettier --write --single-quote --print-width=120 \"src/**/*.{js,jsx}\"",
+    "format": "prettier --write --single-quote --print-width=120 \"src/**/*.{js,jsx}\"",
     "lint": "eslint **/*.{js,jsx} --quiet",
     "server": "babel-node ./src/server.js",
     "build": "webpack -d",
     "build:production": "webpack -p",
     "start": "yarn build && yarn server",
-    "start:production":
-      "NODE_ENV=production yarn build:production && yarn server"
+    "start:production": "NODE_ENV=production yarn build:production && yarn server"
   },
   "dependencies": {
     "bcrypt-nodejs": "^0.0.3",
@@ -34,7 +32,7 @@
     "passport-local": "^1.0.0",
     "push.js": "^1.0.5",
     "react": "^16.0.0",
-    "react-dom": "^16.0.0",
+    "react-dom": "^16.2.0",
     "react-scrollchor": "^4.0.0",
     "react-timeago": "^3.4.3",
     "react-user-avatar": "^1.9.0",
