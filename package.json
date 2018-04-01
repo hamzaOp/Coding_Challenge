@@ -33,7 +33,7 @@
     "passport-facebook": "^2.1.1",
     "passport-local": "^1.0.0",
     "push.js": "^1.0.5",
-    "react": "^16.0.0",
+    "react": "^16.3.0",
     "react-dom": "^16.0.0",
     "react-scrollchor": "^4.0.0",
     "react-timeago": "^3.4.3",
