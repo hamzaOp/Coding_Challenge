@@ -56,7 +56,7 @@
     "eslint-config-prettier": "^2.7.0",
     "eslint-config-react": "^1.1.7",
     "eslint-plugin-flow": "^2.29.1",
-    "eslint-plugin-flowtype": "^2.39.1",
+    "eslint-plugin-flowtype": "^2.46.3",
     "eslint-plugin-import": "^2.8.0",
     "eslint-plugin-jsx-a11y": "^6.0.2",
     "eslint-plugin-prettier": "^2.3.1",
